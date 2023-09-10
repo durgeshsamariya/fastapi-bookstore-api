@@ -20,26 +20,23 @@ The Bookstore API is a robust and high-performance API built using FastAPI. It a
 
 The project follows a structured organization to maintain code readability and maintainability. Here's the project structure:
 ```
-bookstore_api/
-    ├── app/
-    │   ├── __init__.py
-    │   ├── models.py
-    │   ├── routers/
-    │   │   ├── __init__.py
-    │   │   ├── books.py
-    │   │   ├── users.py
-    │   │   └── auth.py
-    │   └── database.py
+fastapi-bookstore-api/
     ├── main.py
+    ├── models.py
+    ├── database.py
+    ├── authentication.py
+    ├── docs/
+    ├── tests/
     └── requirements.txt
 ```
 
-- The `app` directory contains the application code:
-- `models.py` defines the Pydantic models for books, users, reviews, shopping cart, and orders.
-- The `routers` directory contains separate router files for different endpoints (books, users, authentication).
-- `database.py` sets up the database connection and session using SQLAlchemy.
-- `main.py` is the entry point for the API.
-- `requirements.txt` lists the project dependencies.
+- `main.py` : This file will contain your FastAPI application code, including API routing and logic.
+- `models.py` : Define Pydantic models for data structures to ensure data consistency and validation.
+- `database.py` : Set up your database connection and define database models for storing book information.
+- `authentication.py` : Handle user authentication and authorization.
+- `docs/` : Store documentation and project-related notes.
+- `tests/` : Create a test suite to ensure the reliability and correctness of your API.
+- `requirements.txt` : List your project's dependencies for easy installation.
 
 
 ## Getting Started
