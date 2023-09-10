@@ -45,12 +45,12 @@ bookstore_api/
 ## Getting Started
 
 1. Clone the repository: git clone <repository_url>
-2. Create a virtual environment: python3 -m venv env
+2. Create a virtual environment: `python3 -m venv env`
 3. Activate the virtual environment:
-  - For Unix/Linux: source env/bin/activate
-  - For Windows: .\env\Scripts\activate
-4. Install the dependencies: pip install -r requirements.txt
-5. Run the API server: uvicorn main:app --reload
+  - For Unix/Linux: `source env/bin/activate`
+  - For Windows: `.\env\Scripts\activate`
+4. Install the dependencies: `pip install -r requirements.txt`
+5. Run the API server: `uvicorn main:app --reload`
 6. Visit http://localhost:8000/docs to access the interactive API documentation (Swagger UI).
 
 ## Contributing
