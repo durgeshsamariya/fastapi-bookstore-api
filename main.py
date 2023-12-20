@@ -1,5 +1,8 @@
-from fastapi import FastAPI, HTTPException
+from fastapi import FastAPI, HTTPException, Depends, status
 from models import Book  # Import the Book model
+from auth import create_access_token, get_current_user, verify_user, create_access_token_for_user, get_user
+from roles import UserRole
+from models import User
 
 # Create an instance of FastAPI
 app = FastAPI()
@@ -77,3 +80,12 @@ def delete_book(isbn: str):
         raise HTTPException(status_code=404, detail="Book not found")
     deleted_book = books_db.pop(isbn)
     return deleted_book
+
+# Example protected route with role-based access control
+@app.get("/admin/dashboard")
+async def admin_dashboard(current_user: User = Depends(get_current_user)):
+    if current_user["role"] == UserRole.admin:
+        return {"message": "Welcome to the admin dashboard!"}
+    else:
+        raise HTTPException(status_code=status.HTTP_403_FORBIDDEN, 
+                            detail="You do not have permission to access this resource.")

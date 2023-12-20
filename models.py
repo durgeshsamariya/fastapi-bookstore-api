@@ -5,3 +5,8 @@ class Book(BaseModel):
     author: str
     isbn: str
     publication_year: int
+    
+class User(BaseModel):
+    username: str
+    password: str
+    role: str
